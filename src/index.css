@@ -1,0 +1,242 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+body,
+body * {
+  box-sizing: border-box;
+}
+input,
+select,
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.section {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+}
+.header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    background: #111;
+    padding: 10px 20px;
+}
+.header h2 {
+    display: inline-flex;
+    margin: 0;
+    flex-direction: column;
+}
+.linker {
+    font-size: 14px;
+    font-weight: 600;
+    color: #727888;
+    text-decoration: none;
+}
+.linker:hover,
+.linker:focus,
+.linker:active {
+    text-decoration: underline;
+    color: #2a83be;
+}
+.item {
+    width: fit-content;
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 20px;
+    justify-content: space-between;
+    border-bottom: 1px solid #bbb;
+    transition: opacity .2s, scale .7s ease-in-out, visibility .7s ease-in-out;
+    position: relative;
+}
+.item.blink {
+    background: rgba(76, 205, 50, 0.4) !important;
+}
+.item.blur::after {
+    content: " ";
+    display: block;
+    transition: background-color .2s;
+    position: absolute;
+    inset: 100% 0 0 0;
+}
+.item.blur::after {
+    top: 0;
+    background: #0001;
+}
+.item.blur {
+    opacity: .5;
+}
+.item.swipe {
+    scale: 0;
+    visibility: hidden;
+    opacity: 0;
+}
+.item-head {
+    font-size: 1.1em;
+    font-weight: 700;
+    border-bottom-width: 3px;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.list {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    overflow: auto;
+}
+.item-col {
+    word-wrap: break-word;
+    padding: 0 10px;
+}
+.item-col.number {
+    width: 80px;
+    justify-content: flex-end;
+    text-align: right;
+}
+.item-col.name {
+    width: 250px;
+
+}
+.item-col.phone {
+    width: 200px;
+}
+.item-col.email {
+    min-width: 300px;
+}
+.item-col.address {
+    min-width: 400px;
+}
+.item-col.action {
+    padding-block: 5px;
+    min-width: 225px;
+    justify-content: space-between;
+    display: inline-flex;
+}
+.col-line {
+    min-width: 1px;
+    background: #bbb;
+    align-self: stretch;
+}
+.button {
+    padding: 10px;
+    color: #fff;
+    background: #0006;
+    font-weight: 600;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    min-width: 100px;
+    text-decoration: none;
+    text-align: center;
+    transition: .2s;
+}
+.button:disabled {
+    opacity: .8;
+}
+.button:not(:disabled):hover {
+    cursor: pointer;
+}
+.button.remove {
+    background: #ff3700;
+}
+.button.remove:not(:disabled):hover {
+    background: #932000;
+}
+.button.adder {
+    background: #1e90ff;
+}
+.button.adder:not(:disabled):hover {
+    background: #2a52be;
+}
+.button.submit {
+    background: #34a853;
+}
+.button.submit:not(:disabled):hover {
+    background: #21853c;
+}
+.addform {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 10px;
+}
+.formgroup {
+    padding: 10px 0;
+}
+.formsubmit {
+    text-align: center;
+}
+.label {
+    width: 100%;
+    display: block;
+    color: #666;
+    font-weight: 600;
+}
+.input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px auto;
+    border: 1px solid #727888;
+    border-radius: 5px;
+}
+textarea.input {
+    min-height: 100px;
+    max-height: 300px;
+    resize: vertical;
+}
+.viewer .item:nth-child(2n - 1) {
+    background: #efefef;
+}
+.viewer:empty::before {
+    content: "Your phone directory is empty. Add a new contact from top.";
+    color: #727888;
+    font-size: 14px;
+    display: block;
+    width: fit-content;
+    margin: 5vh auto;
+    text-align: center;
+}
+.invalid {
+    text-align: center;
+    padding: 10vh 10px 10px;
+    font-size: 16px;
+    color: #727888;
+}
