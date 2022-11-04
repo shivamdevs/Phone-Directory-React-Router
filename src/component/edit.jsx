@@ -3,7 +3,7 @@ import { useSearchParams, useNavigate, Link } from 'react-router-dom';
 import Layout from './layout';
 
 function Edit(props) {
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
     const [editUser, setEditUser] = useState([]);
     const [editable, setEditable] = useState(false);
     useEffect(()=>{
