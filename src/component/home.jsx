@@ -59,7 +59,7 @@ function ListItem(props) {
         setTimeout(() => {
             item.classList.add('swipe');
             setTimeout(() => {
-                item.parentNode.removeChild(item);
+                item && item.parentNode.removeChild(item);
             }, 200);
         }, 200);
     };
