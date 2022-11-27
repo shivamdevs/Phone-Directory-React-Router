@@ -33,19 +33,19 @@ function Add(props) {
             <form action="" method="post" onSubmit={submitHandle} className="addform">
                 <div className="formgroup">
                     <label htmlFor="name" className="label">Name</label>
-                    <input required id="name" type="text" placeholder="John Doe" className="input" />
+                    <input required id="name" type="text" autoFocus autoComplete='name' placeholder="John Doe" className="input" />
                 </div>
                 <div className="formgroup">
                     <label htmlFor="phone" className="label">Phone</label>
-                    <input required id="phone" type="number" placeholder="9876543210" className="input" />
+                    <input required id="phone" type="number" autoComplete='tel' placeholder="9876543210" className="input" />
                 </div>
                 <div className="formgroup">
                     <label htmlFor="email" className="label">Email</label>
-                    <input required id="email" type="email" placeholder="john@doe.com" className="input" />
+                    <input required id="email" type="email" autoComplete='email' placeholder="john@doe.com" className="input" />
                 </div>
                 <div className="formgroup">
                     <label htmlFor="address" className="label">Address</label>
-                    <textarea required id="address" className="input" placeholder='123 Main'></textarea>
+                    <textarea required id="address" className="input" autoComplete='address' placeholder='123 Main'></textarea>
                 </div>
                 <div className="formsubmit">
                     <button type="submit" className="button adder">Add Contact</button>

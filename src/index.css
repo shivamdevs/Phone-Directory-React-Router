@@ -24,10 +24,12 @@ button {
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
+  appearance: none;
   margin: 0;
 }
 input[type=number] {
   -moz-appearance: textfield;
+  appearance: none;
 }
 
 
@@ -84,28 +86,6 @@ input[type=number] {
     border-bottom: 1px solid #bbb;
     transition: opacity .2s, scale .7s ease-in-out, visibility .7s ease-in-out;
     position: relative;
-}
-.item.blink {
-    background: rgba(76, 205, 50, 0.4) !important;
-}
-.item.blur::after {
-    content: " ";
-    display: block;
-    transition: background-color .2s;
-    position: absolute;
-    inset: 100% 0 0 0;
-}
-.item.blur::after {
-    top: 0;
-    background: #0001;
-}
-.item.blur {
-    opacity: .5;
-}
-.item.swipe {
-    scale: 0;
-    visibility: hidden;
-    opacity: 0;
 }
 .item-head {
     font-size: 1.1em;

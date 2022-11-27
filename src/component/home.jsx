@@ -1,20 +1,7 @@
-import { useEffect } from 'react';
-import { Link, } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Layout from './layout';
 
 function Home(props) {
-    useEffect(()=>{
-        if (window.location.hash) {
-            const item = document.querySelector(window.location.hash);
-            if (item) {
-                item.scrollIntoView({ behavior: 'smooth' });
-                item.classList.add('blink');
-            }
-            setTimeout(() => {
-                item && item.classList.remove('blink');
-            }, 1000);
-        }
-    });
     return (
         <Layout headerText="Phone Directory" headerLink="/add" headerButton="Add" headerType="submit">
             <div className="list">
@@ -48,23 +35,14 @@ export default Home;
 
 function ListItem(props) {
     const deleteHandle = () => {
-        const item = document.querySelector('#contact-' + props.item);
-        item.classList.add('blur');
-        item.querySelector('button.remove').innerHTML = 'Deleting...';
         props.setContacts((oldList) => {
             const newList = [...oldList];
             newList.splice(props.item, 1);
             return newList;
         });
-        setTimeout(() => {
-            item.classList.add('swipe');
-            setTimeout(() => {
-                item && item.parentNode.removeChild(item);
-            }, 200);
-        }, 200);
     };
   return (
-    <div key={(props.data.id)} id={`contact-${props.item}`} className="item">
+    <div key={props.item} className="item">
       <div className="item-col number">{props.item + 1}</div>
       <span className="col-line"></span>
       <div className="item-col name">{props.data.name}</div>
