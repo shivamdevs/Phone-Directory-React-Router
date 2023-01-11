@@ -6,7 +6,7 @@ function Layout(props) {
             <header className="header">
              <h2>
                <span>{props.headerText}</span>
-               <a href="https://github.com/shivamdevs/Phone-Directory-React" className="linker" target="_blank" rel="noopener noreferrer">© Shivam Devs</a>
+               <a href="https://myoasis.tech" className="linker" target="_blank" rel="noopener noreferrer">© Oasis.tech</a>
              </h2>
              <Link className={`button ${props.headerType}`} to={props.headerLink}>{props.headerButton}</Link>
            </header>
